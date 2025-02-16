@@ -1,0 +1,338 @@
+/* -----------------------------------
+Variables
+-------------------------------------- */
+
+:root {
+    --color-bg: #000000;
+    --color-highlight: #f7f7f7;
+    --color-default: #b8b8b8;
+    --color-dim: #777;
+    --color-vdim: #505050;
+    --font-sans: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    --font-size: 16px;
+    --font-s: 14px;
+    --spacing: 1.5em;
+    --spacing-s: calc(0.5 * var(--spacing));
+    --spacing-m: var(--spacing);
+    --spacing-l: calc(1.5 * var(--spacing));
+    --spacing-xl: calc(2.5 * var(--spacing));
+    --spacing-xxl: calc(5 * var(--spacing));
+    --spacing-col: calc(6 * var(--spacing));
+    --spacing-width-max: 38rem;
+    --spacing-width-tiny: 15rem;
+    --spacing-width-xl: 50rem;
+}
+
+html#post {
+    --color-bg: #FFFFFF;
+    --color-default: #3b3a38;
+    --color-highlight: #000;
+    --color-dim: #93918F;
+    --color-vdim: #c9c5c1;
+}
+
+
+/* -----------------------------------
+Base
+-------------------------------------- */
+
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    font-feature-settings: "kern" 1,"liga" 1;
+}
+
+html {
+    font-size: var(--font-std);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    background-color: var(--color-bg);
+    color: var(--color-default);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "onum" 1, "liga" 1;
+    font-size: var(--font-size);
+    line-height: 1.5;
+    padding: 1.5rem;
+}
+
+body {
+    margin: 3vw 0;
+}
+
+section {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* -----------------------------------
+Header
+-------------------------------------- */
+
+body>header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: var(--spacing-xxl);
+    color: var(--color-dim);
+}
+
+body>header h1 {
+    margin: 0;
+}
+
+body>header a {
+    text-decoration: none;
+}
+
+/* -----------------------------------
+Footer
+-------------------------------------- */
+
+footer {
+    font-size: 12px;
+    line-height: var(--spacing-xl);
+    text-align: center;
+    justify-content: center;
+    color: var(--color-vdim);
+}
+
+/* -----------------------------------
+Typography
+-------------------------------------- */
+
+h1, h2, h3 {
+    font-weight: 500;
+    font-size: 1rem;
+    margin: var(--spacing-s) 0;
+    color: var(--color-highlight);
+}
+
+article h1 {
+    margin-bottom: 0;
+}
+
+h2 {
+    margin: var(--spacing-m) 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+a {
+    color: var(--color-default);
+    text-decoration-color: var(--color-dim);
+}
+
+a:hover {
+    transition: color 0.2s ease-in;
+    color: var(--color-highlight);
+}
+
+h3 a {
+    color: var(--color-highlight);
+}
+
+p, ol, ul {
+    font-family: var(--font-sans);
+    font-weight: normal;
+    margin: 1em 0;
+    font-size: var(--font-size);
+    font-feature-settings: 'onum' 1;
+}
+
+blockquote {
+    font-weight: normal;
+    padding-left: 2em;
+}
+
+blockquote, blockquote p {
+    font-family: Georgia;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: var(--spacing-s);
+    font-family: var(--font-sans);
+    color: var(--color-dim);
+    font-size: 14px;
+}
+
+small {
+    font-size: var(--font-s);
+    color: var(--color-dim);
+    line-height: 1.5;
+    display: block;
+}
+
+.label, time {
+    color: var(--color-dim);
+}
+
+/* -----------------------------------
+Block Elements
+-------------------------------------- */
+
+hr {
+    margin: var(--spacing-xl) auto;
+    max-width: calc(2 * var(--spacing-xxl));
+    border: none;
+    border-top: 1px solid var(--color-vdim);
+}
+
+figure, video, audio {
+    display: block;
+    width: 100%;
+    margin: var(--spacing-xl) 0;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+/* -----------------------------------
+Home
+-------------------------------------- */
+
+.split {
+    margin-bottom: var(--spacing-l);
+}
+
+@media (min-width: 600px) {
+    .split {
+        display: grid;
+        grid-template-columns: clamp(8em, 20vw, var(--spacing-col)) 1fr;
+        align-items: baseline;
+        margin-bottom: var(--spacing-s);
+    }
+    .split time { margin: 0; }
+}
+
+small + p {
+    margin-top: var(--spacing-s);
+}
+
+.main-form {
+    gap: 1rem;
+}
+
+.sodCover {
+    margin-top: var(--spacing-s);
+    max-width: 10rem;
+    border-radius: 2px 4px 4px 2px;
+    box-shadow:
+    0.3px 0.5px 0.7px hsl(0deg 0% 1% / 0.37),
+    0.8px 1.6px 2px -0.8px hsl(0deg 0% 1% / 0.36),
+    2px 4.1px 5.1px -1.7px hsl(0deg 0% 1% / 0.36),
+    5px 10px 12.5px -2.5px hsl(0deg 0% 1% / 0.36);
+}
+
+/* -----------------------------------
+Cards
+-------------------------------------- */
+
+section.card {
+    background-color: rgba(80,80,80,0.25);
+    margin: var(--spacing-l) auto;
+    max-width: var(--spacing-width-max);
+    text-align: center;
+    padding: var(--spacing-l);
+    border-radius: var(--spacing-s);
+}
+
+section.card:last-of-type {
+    margin-bottom: calc(2 * var(--spacing-l));
+}
+
+input[type=submit] {
+    font-weight: bold;
+}
+
+.buttonGroup {
+    display: flex;
+    grid-gap: var(--spacing-s);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: var(--spacing-l) 0 var(--spacing-m);
+}
+
+.buttonGroup a {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 4px;
+    white-space: nowrap;
+    background-color: rgba(255,255,255,0.1);
+    color: #FFF;
+    text-decoration: none;
+    transition: 0.2s ease background-color;
+}
+
+.buttonGroup a:hover {
+    background-color: rgba(255,255,255,0.15);
+}
+
+.buttonGroup a.primary {
+    background-color: #4444FF;
+}
+
+.buttonGroup a.primary:hover {
+    background-color: #3C3CCC;
+}
+
+/* -----------------------------------
+Post Index & Post
+-------------------------------------- */
+
+section.posts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: var(--font-size);
+}
+
+article header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.callout {
+    margin: calc(-1 * var(--spacing-l)) calc(-1 * var(--spacing-m)) calc(3 * var(--spacing-l));
+    padding: var(--spacing-s);
+    background-color: #FFF1BF;
+    text-align: center;
+}
+
+/* -----------------------------------
+Limit widths
+-------------------------------------- */
+
+body>header, article>header,
+h1, h2, h3, time,
+p, blockquote, ol, ul, details, pre.code, pre, figcaption,
+.split, .posts
+{
+    max-width: var(--spacing-width-max);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figure, audio, video {
+    max-width: var(--spacing-width-xl);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.limit {
+    max-width: var(--spacing-width-tiny);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+iframe[src*="youtube"] {
+    max-width: var(--spacing-width-xl);
+    width: 100%;
+	aspect-ratio: 16/9;
+}
