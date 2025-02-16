@@ -1,87 +1,31 @@
-@import url('https://rsms.me/inter/inter.css');
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
-
-::-webkit-scrollbar {
-  width: 3px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--dark-white);
-  border-radius: 20px;
-  border: transparent;
-}
-
-::-webkit-scrollbar:horizontal {
-  height: 3px;
-}
-
-:root {
-  --green: #00fa9a;
-  --cyan: #00cece;
-  --pink: #d344e2;
-  --black: #212121;
-  --light-black: #666666;
-  --white: #ffffff;
-  --dark-white: #eeeeee;
-  --light-yellow: #f7b955;
-  --dark-yellow: #f49b0b;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --green: #00fa9a;
-    --pink: #ff3299;
-    --black: #dedede;
-    --light-black: #ccc;
-    --white: #000;
-    --dark-white: #323232;
-  }
-}
-
-html, body {
+body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   height: 100vh;
   margin: 0;
+  background-color: var(--white);
+  color: var(--black);
   overflow: hidden;
-  background-color: var(--black);
-  color: var(--white);
-  font-family: 'Inter', sans-serif;
 }
 
-main {
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
-.left-side {
-  width: 40%;
-  padding: 20px;
+.text-container {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
-.right-side {
-  width: 60%;
-  height: 100%;
+.image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: auto;
 }
 
-.right-side img {
-  width: 100%;
-  height: 100%;
+.image-container img {
+  height: 100vh;
+  width: auto;
   object-fit: cover;
-}
-
-a {
-  color: var(--cyan);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
