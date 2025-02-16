@@ -31,7 +31,6 @@ html#post {
     --color-vdim: #c9c5c1;
 }
 
-
 /* -----------------------------------
 Base
 -------------------------------------- */
@@ -43,22 +42,16 @@ Base
 }
 
 html {
-    font-size: var(--font-std);
+    font-size: var(--font-size);
     font-family: var(--font-sans);
     line-height: 1.5;
     background-color: var(--color-bg);
     color: var(--color-default);
-    font-family: var(--font-sans);
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    font-feature-settings: "onum" 1, "liga" 1;
-    font-size: var(--font-size);
-    line-height: 1.5;
     padding: 1.5rem;
 }
 
 body {
-    margin: 3vw 0;
+    margin: 0;
 }
 
 section {
